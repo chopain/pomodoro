@@ -66,11 +66,14 @@ export default class App extends React.Component {
 
   toggleStart = () => this.setState(prevState => ({
     start: !prevState.start,
-    buttonText: (prevState.start ? "Start" : "Stop")
+    buttonText: (prevState.start ? "Start" : "Stop"),
   }))
 
   resetTimer = () => {
-    this.toggleStart()
+    this.setState(prevState => ({
+      start: false,
+      buttonText: "Start",
+    }))
     this._timer.reset()
   }
 
@@ -80,7 +83,6 @@ export default class App extends React.Component {
         <Timer 
         start={this.state.start} 
         pomodoro={this.state.pomodoro}
-        reset={this.state.reset}
         toggleStart={() => this.toggleStart}
         ref={component => { this._timer = component }}
         />
