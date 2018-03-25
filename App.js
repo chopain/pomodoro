@@ -16,8 +16,8 @@ class Timer extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			minutes: 0,
-      seconds: 1,
+			minutes: 25,
+      seconds: 0,
       pomodoro: props.pomodoro,
       pomodoroCount: 0,
       modeText: "Pomodoro Time",
